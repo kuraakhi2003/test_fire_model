@@ -8,7 +8,8 @@ standard_scaler=pickle.load(open("models/scaler.pkl","rb"))
 
 
 
-app=Flask(__name__)
+application=Flask(__name__)
+app=application
 @app.route("/")
 def welcome():
     return "Welcome to ML Practice on AWS!"
