@@ -9,11 +9,11 @@ standard_scaler=pickle.load(open("models/scaler.pkl","rb"))
 
 
 application=Flask(__name__)
-app=application
-@app.route("/")
+
+@application.route("/")
 def welcome():
     return "Welcome to ML Practice on AWS!"
-@app.route("/predict",methods=["GET","POST"])
+@application.route("/predict",methods=["GET","POST"])
 def predict_new_data():
     if request.method=="POST":
         Temperature=request.form.get("Temperature")
